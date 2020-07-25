@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500&display=swap" rel="stylesheet">
     <title>Javascript Quiz</title>
 </head>
 
@@ -14,11 +15,13 @@
     <div class="container-fluid">
         <div class="bg-primary row">
             <div class="text-center col-lg-12 col-md-12 col-sm-12">
-                <img src="images/Saylani-logo.png" class="img-fluid mb-5" alt="">
+                <img src="images/Saylani-logo.png" class="img-fluid" alt="">
                 <h2 class="text-light">Sylani Welfare Trust</h2>
-                <h2 class="text-light">Javascript Quiz</h2>                
+                <h2 class="text-light">Javascript Quiz</h2>               
+                
             </div>
         </div>
+        <h6 class="text-dark bg-light text-right" id="timer">Time Remaining : 29 : 59</h6>                
         
         <br>
         <br>
@@ -26,7 +29,8 @@
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <h4 id="q"></h4>
                 
-                <p>Answers can be:</p>
+                <p>Select your answer:</p>
+                <hr>
                 <input name="answersradio" type="radio" id="a" name="" value="a"> a)<p id="pa"></p>                
                 <input name="answersradio" type="radio" id="b" name="" value="b"> b)<p id="pb"></p>                
                 <input name="answersradio" type="radio" id="c" name="" value="c"> c)<p id="pc"></p>                
@@ -35,7 +39,7 @@
         </div>
         <div class="row mt-5 mt-5">
             <div class="col-lg-12 col-md-12 col-sm-12 bg-secondary text-right">
-                <button class="m-3 btn btn-primary" onclick="checkAndNext(this)" id="nextbtn">Next</button>
+                <button class="m-3 btn btn-primary rounded-pill" onclick="checkAndNext(this)" id="nextbtn">Next</button>
                 <!-- <h1 class="text-light">Sylani</h1> -->
 
             </div>

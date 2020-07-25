@@ -1,3 +1,18 @@
+var fname = document.getElementById("fname")
+var lname = document.getElementById("lname")
+var email1 = document.getElementById("email")
+
+function chkSubmit(){
+    if(fname.value == "" || lname.value == "" || email1.value==""){
+        alert("Please fill all info")
+    }
+    else{
+        document.forms["userInfo"].submit();
+        // console.log(fname.value=="")
+    }
+    
+}
+
 var questions = [
     {
         question: "Which is the best way to define variable in javascript?",
@@ -101,6 +116,16 @@ var questions = [
         correctAnswer : "a"
     }
 ]
+var firstName;
+var lastName;
+var email;
+var url = new URL(window.location.href)
+firstName = url.searchParams.get("fname")
+lastName = url.searchParams.get("lname")
+email = url.searchParams.get("email")
+
+
+
 
 //page 2 javascript variables
 var q = document.getElementById("q");
@@ -112,15 +137,40 @@ var pa = document.getElementById("pa");
 var pb = document.getElementById("pb");
 var pc = document.getElementById("pc");
 var pd = document.getElementById("pd");
+
 var questionCounter = 0;
 var nextbtn = document.getElementById("nextbtn")
 var selectedAnswers = [];
+var timer = document.getElementById("timer")
+var min = 29;
+var sec = 60;
+var interval;
 
 q.innerHTML = "Q1. "+questions[0].question;
 pa.innerHTML = questions[0].answers.a;
 pb.innerHTML = questions[0].answers.b;
 pc.innerHTML = questions[0].answers.c;
 pd.innerHTML = questions[0].answers.d;
+
+
+function timerf(){
+    if(sec==1){
+        min--
+        sec = 60;
+        timer.innerHTML = "Time Remaining : "+min+" : "+sec    
+    }
+    else{
+        sec--
+        timer.innerHTML = "Time Remaining : "+min+" : "+sec    
+    }
+    
+
+    
+    
+}
+interval = setInterval(timerf,1000)
+// setTimeout(function(){clearInterval(interval)},10000)
+
 
 // console.log(questions[0].answers.a)
 // console.log(a.childNodes)
@@ -225,31 +275,24 @@ function resultPage() {
     document.write("<div class='container-fluid'>");
     document.write("<div class='bg-primary row'>")
     document.write("<div class='text-center col-lg-12 col-md-12 col-sm-12'>")
-    document.write("<img src='images/Saylani-logo.png' class='img-fluid mb-5' alt=''>");
+    document.write("<img src='images/Saylani-logo.png' class='img-fluid' alt=''>");
     document.write("<h2 class='text-light'>Sylani Welfare Trust</h2>")
     document.write("<h2 class='text-light'>Javascript Quiz Result</h2>")
     document.write("</div>");
     document.write("</div>");
     document.write("<br><br>");
     document.write("<div class='row'>")
-    document.write("<div class='left col-lg-12 col-md-12 col-sm-12'>");
-    document.write("<h4>Correct Answers: "+correctAnswers+"</h4>")
-    document.write("<h4>Percentage: "+(correctAnswers / noOfQuestions) * 100 + "%"+"</h4>");
+    document.write("<div class='left col-lg-12 col-md-12 col-sm-12 text-center'>");
+    document.write("<img src='images/result.jpg' width='20%'></img>")
+    document.write("<h4 class='note1'>First Name: "+firstName+"</h4>")
+    document.write("<h4 class='note1'>Last Name: "+lastName+"</h4>")
+    document.write("<h4 class='note1'>Correct Answers: "+correctAnswers+"</h4>")
+    document.write("<h4 class='note1'>Percentage: "+(correctAnswers / noOfQuestions) * 100 + "%"+"</h4>");
     document.write("</div>");
     document.write("</div>");
     document.write("</div>");
     document.write("</body>");
     document.write("</html>");
-    
-
-
-
-
-
-
-
-
-
     console.log("total correct answers are " + correctAnswers)
     console.log("percentage is " + (correctAnswers / noOfQuestions) * 100 + "%")
 }
