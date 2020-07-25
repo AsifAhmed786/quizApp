@@ -284,10 +284,10 @@ function resultPage() {
     document.write("<div class='row'>")
     document.write("<div class='left col-lg-12 col-md-12 col-sm-12 text-center'>");
     document.write("<img src='images/result.jpg' width='20%'></img>")
-    document.write("<h4 class='note1'>First Name: "+firstName+"</h4>")
-    document.write("<h4 class='note1'>Last Name: "+lastName+"</h4>")
-    document.write("<h4 class='note1'>Correct Answers: "+correctAnswers+"</h4>")
-    document.write("<h4 class='note1'>Percentage: "+(correctAnswers / noOfQuestions) * 100 + "%"+"</h4>");
+    document.write("<h4>First Name: "+firstName+"</h4>")
+    document.write("<h4>Last Name: "+lastName+"</h4>")
+    document.write("<h4>Correct Answers: "+correctAnswers+"</h4>")
+    document.write("<h4>Percentage: "+(correctAnswers / noOfQuestions) * 100 + "%"+"</h4>");
     document.write("</div>");
     document.write("</div>");
     document.write("</div>");
